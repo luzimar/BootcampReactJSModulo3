@@ -45,8 +45,12 @@ class Main extends Component {
               })
             }
           />
-          <button type="submit">Adicionar</button>
-          {this.props.favorites.loading && <span>Carregando...</span>}
+          {this.props.favorites.loading ? (
+            <span>Carregando...</span>
+          ) : (
+            <button type="submit">Adicionar</button>
+          )}
+
           {!!this.props.favorites.error && (
             <span style={{ color: "#F00" }}>{this.props.favorites.error}</span>
           )}
